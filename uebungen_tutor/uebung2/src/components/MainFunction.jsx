@@ -1,6 +1,7 @@
-import Table from "./Table"
+import React from 'react';
+import Table from './Table';
 
-function Main() {
+function Main(props) {
 
     const BOOKS = [
         {
@@ -70,7 +71,7 @@ function Main() {
             'Verlag': 'Simon & Schuster Audio'
         }
     ]
-
+    
     return (
         <main>
             <h2>Bücher</h2>
@@ -78,7 +79,7 @@ function Main() {
             <h2>Audio-Books</h2>
             <Table data={AUDIO} />
         </main>
-    )
+    );
 }
 
-export default Main
+export default Main;
