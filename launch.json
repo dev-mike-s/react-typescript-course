@@ -1,0 +1,57 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Konfiguration für das Starten der Vite-App in Chrome
+    {
+      "name": "Launch Vite App in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5555", // Der Vite-Standardport
+      "webRoot": "${workspaceFolder}/src", // Dein Quellcode-Ordner
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/*" // Pfadübersetzungen für Sourcemaps
+      }
+    },
+    // Konfiguration für das Starten der Vite-App in Firefox
+    {
+      "name": "Launch Vite App in Firefox",
+      "type": "firefox",
+      "request": "launch",
+      "url": "http://localhost:4444", // Der Vite-Standardport
+      "webRoot": "${workspaceFolder}/src", // Dein Quellcode-Ordner
+      "reloadOnAttach": true, // Automatisches Neuladen der Seite beim Anfügen des Debuggers
+      "pathMappings": [
+        {
+          "url": "webpack://",
+          "path": "${workspaceFolder}/src"
+        }
+      ]
+    },
+    // Konfiguration für das Anfügen an eine bereits laufende Chrome-Instanz
+    {
+      "name": "Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 2222, // Der Standardport für Remote-Debugging in Chrome
+      "webRoot": "${workspaceFolder}/src", // Dein Quellcode-Ordner
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/*"
+      }
+    },
+    // Konfiguration für das Anfügen an eine bereits laufende Firefox-Instanz
+    {
+      "name": "Attach to Firefox",
+      "type": "firefox",
+      "request": "attach",
+      "port": 1111, // Der Standardport für Remote-Debugging in Firefox
+      "webRoot": "${workspaceFolder}/src",
+      "reloadOnAttach": true,
+      "pathMappings": [
+        {
+          "url": "webpack://",
+          "path": "${workspaceFolder}/src"
+        }
+      ]
+    }
+  ]
+}

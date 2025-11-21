@@ -87,13 +87,15 @@ export class Main extends Component {
   }
 
   // switch product category
-  switchProductCategory = () => {};
+  switchProductcategory = () => {};
 
   render() {
     return (
       <main>
         <div>Main</div>
-        <button onClick={this.switchProdCat}>Produktkategorie wechseln</button>
+        <button onClick={this.switchProductcategory}>
+          Produktkategorie wechseln
+        </button>
         <h2>Bücher</h2>
         <Table data={PRODUCTS} />
         {/*
