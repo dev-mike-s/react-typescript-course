@@ -11,8 +11,39 @@ function Table(props) {
    * -verlag : string
    * -Länge: number
    */
-  if (props.books) {
-    {
+  return (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>Autor</th>
+            <th>Titel</th>
+            <th>Jahr</th>
+            <th>Seiten</th>
+            {/*<th>{Länge ? Länge : ''}</th>*/}
+            <th>Verlag</th>
+          </tr>
+        </thead>
+        <tbody>
+          {console.log(props)}
+          {props.books &&
+            props.books.map((value, index) => {
+              return <TableRow key={index} {...value} />;
+            })}
+          {props.audio &&
+            props.audio.map((value, index) => {
+              return <TableRow key={index} {...value} />;
+            })}
+        </tbody>
+      </table>
+    </>
+  );
+}
+
+export default Table;
+
+/*
+      &&
       <table>
         <thead>
           <tr>
@@ -24,40 +55,12 @@ function Table(props) {
           </tr>
         </thead>
         <tbody>
-          {props.books.map((value, index) => {
+          {props.audio.map((value, index) => {
             return <TableRow key={index} {...value} />;
           })}
         </tbody>
-      </table>;
-    }
-  } else {
-    return (
-      <>
-        {
-          <table>
-            <thead>
-              <tr>
-                <th>Autor</th>
-                <th>Titel</th>
-                <th>Jahr</th>
-                <th>Seiten</th>
-                <th>Verlag</th>
-              </tr>
-            </thead>
-            <tbody>
-              {props.audio.map((value, index) => {
-                return <TableRow key={index} {...value} />;
-              })}
-            </tbody>
-          </table>
-        }
-      </>
-    );
-  }
-}
-export default Table;
+      </table>
 
-/*
 <tbody>
     <tr>
       <th scope="row">Chris</th>
