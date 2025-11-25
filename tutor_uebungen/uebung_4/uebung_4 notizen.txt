@@ -1,0 +1,11 @@
+Hinweise:
+
+- für die states initialwert -1, die Praxis hiervon kann recherchiert werden (sonst "", "None", .. 
+
+- form> { this.state.bereich === 1 && (<div><h2>Persönliche.. 
+
+- Bereich: 1
+
+- 'weiter' navigieren mit this.SetState()
+
+- 'zurueck' 
