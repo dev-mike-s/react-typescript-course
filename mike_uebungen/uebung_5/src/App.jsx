@@ -1,12 +1,10 @@
 import { useState } from "react";
-
+import { Routes, Route } from "react-router";
+import Select from './components/Select';
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState({
-    products: "",
-    warenkorb: [],
-  });
+  const [products, setProducts] = useState([]);
 
   const DATA = [
     {
@@ -187,7 +185,11 @@ function App() {
         <div>Shop</div>
         <div>Warenkorb ()</div>
       </nav>
+      <Routes>
 
+        <Route path="/" element={<Home />} />
+        <Route path="/select" element={<Select />} />
+      </Routes>
       <main></main>
     </div>
   );
