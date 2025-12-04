@@ -1,36 +1,56 @@
-import TableRow from "./TableRow";
-import type { Books, Audio } from "./Main";
+import TableRow from './TableRow.js';
+import type { books, audio } from './Main.tsx'
 
-type Props = Books & Audio;
-//type Data = string | number;
-type Ele = string | number;
-type Index = number;
+type Props = {
+  books?: books[];
+  audio?: audio[];
+}
 
 function Table(props: Props) {
-  /* 
-    props:
-     - data: Array (books/audio)
-    */
-
-  const KEYS_ARRAY = Object.keys(props.data[0]);
-
+  // Destrukturierung
+  const { books, audio } = props;
   return (
-    <table>
-      <thead>
-        <tr>
-          {KEYS_ARRAY.map((ele) => {
-            // ele = String
-            return <th>{ele}</th>;
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {props.data.map((ele: Ele, index: Index) => {
-          // ele = Objekt
-          return <TableRow product={ele} i={index} />;
-        })}
-      </tbody>
-    </table>
+    <>
+      { /* if the first expressions are false - it will return false, 
+      react ignores it and renders nothing */}
+      {books && books.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Autor</th>
+              <th>Titel</th>
+              <th>Jahr</th>
+              <th>Seiten</th>
+              <th>Verlag</th>
+            </tr>
+          </thead>
+          <tbody>
+            {books.map((item, index) => (
+              /* {...item} instead of: autor={item.autor} titel={item.titel} ... */
+              <TableRow key={`book-${index}`} {...item} />
+            ))}
+          </tbody>
+        </table>
+      )}
+      {audio && audio.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Autor</th>
+              <th>Titel</th>
+              <th>Jahr</th>
+              <th>Laenge</th>
+              <th>Verlag</th>
+            </tr>
+          </thead>
+          <tbody>
+            {audio.map((item, index) => (
+              <TableRow key={`audio-${index}`} {...item} />
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
   );
 }
 

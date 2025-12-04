@@ -70,7 +70,8 @@ function Main() {
     },
   ];
 
-  console.log('Start Test')
+  console.log(BOOKS)
+  console.log(AUDIO)
 
   return (
     <main>

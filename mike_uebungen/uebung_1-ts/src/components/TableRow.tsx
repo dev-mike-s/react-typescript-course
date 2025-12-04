@@ -1,26 +1,22 @@
-//import type { Books, Audio } from "./Main";
+import React from 'react';
+import type { books as BookType, audio as AudioType } from './Main.tsx';
 
-//type Props = Books & Audio;
-//type Ele = string | number;
-//function TableRow(props: Props) {
+// Union type
+type TableRowProps = BookType | AudioType;
 
-function TableRow(props) {
-  /* 
-    props:
-     - product: Objekt
-     - i: Zahl (Index)
-    */
-
-  const VALUES_ARRAY = Object.values(props.product);
+function TableRow({ Autor, Titel, Verlag, Jahr, Seiten, Laenge }: TableRowProps) {
 
   return (
-    <tr className={props.i % 2 ? "odd" : undefined}>
-      {VALUES_ARRAY.map((ele) => {
-        // ele = value (String / Zahl)
-        return <td>{ele}</td>;
-      })}
+    <tr>
+
+      <td>{Autor}</td>
+      <td>{Titel}</td>
+      <td>{Verlag}</td>
+      <td>{Jahr || ''}</td>
+      <td>{Seiten || ''}</td>
+      <td>{Laenge || ''}</td>
     </tr>
   );
 }
 
-export default TableRow;
+export default TableRow; 

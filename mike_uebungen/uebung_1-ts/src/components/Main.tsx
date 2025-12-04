@@ -1,99 +1,99 @@
-import Table from "./Table";
-/* import TableAudio from "./TableAudio"
-import TableBooks from "./TableBooks" */
+import Table from './Table.js';
+import '../index.css';
 
-export type Books = {
-  autor: string;
-  titel: string;
-  jahr: number;
-  seiten: number;
-  verlag: string;
-};
-
-export type Audio = {
-  autor: string;
-  titel: string;
-  jahr: number;
-  länge: number;
-  verlag: string;
-};
-
+export type books = {
+  Autor: string;
+  Titel: string;
+  Jahr: number;
+  Seiten: number;
+  Verlag: string;
+}
+export type audio = {
+  Autor: string;
+  Titel: string;
+  Jahr: number;
+  Laenge: number;
+  Verlag: string;
+}
 function Main() {
   const BOOKS = [
     {
-      Autor: "Stephen King",
-      Titel: "Carrie",
+      Autor: 'Stephen King',
+      Titel: 'Carrie',
       Jahr: 1974,
       Seiten: 199,
-      Verlag: "Doubleday",
+      Verlag: 'Doubleday',
     },
     {
-      Autor: "Stephen King",
-      Titel: "The Shining",
+      Autor: 'Stephen King',
+      Titel: 'The Shining',
       Jahr: 1977,
       Seiten: 447,
-      Verlag: "Doubleday",
+      Verlag: 'Doubleday',
     },
     {
-      Autor: "Stephen King",
-      Titel: "Christine",
+      Autor: 'Stephen King',
+      Titel: 'Christine',
       Jahr: 1983,
       Seiten: 526,
-      Verlag: "Viking",
+      Verlag: 'Viking',
     },
     {
-      Autor: "Stephen King",
-      Titel: "It",
+      Autor: 'Stephen King',
+      Titel: 'It',
       Jahr: 1986,
       Seiten: 1138,
-      Verlag: "Viking",
+      Verlag: 'Viking',
     },
     {
-      Autor: "Stephen King",
-      Titel: "Misery",
+      Autor: 'Stephen King',
+      Titel: 'Misery',
       Jahr: 1987,
       Seiten: 310,
-      Verlag: "Viking",
+      Verlag: 'Viking',
     },
     {
-      Autor: "Stephen King",
-      Titel: "Joyland",
+      Autor: 'Stephen King',
+      Titel: 'Joyland',
       Jahr: 2013,
       Seiten: 288,
-      Verlag: "Hard Case Crime",
+      Verlag: 'Hard Case Crime',
     },
   ];
 
   const AUDIO = [
     {
-      Autor: "Stephen King",
-      Titel: "On Writing: A Memoir of the Craft ",
+      Autor: 'Stephen King',
+      Titel: 'On Writing: A Memoir of the Craft ',
       Jahr: 2000,
-      Länge: 120,
-      Verlag: "Simon & Schuster Audio",
+      Laenge: 120,
+      Verlag: 'Simon & Schuster Audio',
     },
     {
-      Autor: "Stephen King",
+      Autor: 'Stephen King',
       Titel: "Salem's Lot (introduction)",
       Jahr: 2004,
-      Länge: 180,
-      Verlag: "Simon & Schuster Audio",
+      Laenge: 180,
+      Verlag: 'Simon & Schuster Audio',
     },
     {
-      Autor: "Stephen King",
-      Titel: "Bag of Bones",
+      Autor: 'Stephen King',
+      Titel: 'Bag of Bones',
       Jahr: 2005,
-      Länge: 240,
-      Verlag: "Simon & Schuster Audio",
+      Laenge: 240,
+      Verlag: 'Simon & Schuster Audio',
     },
   ];
+
+  console.log(BOOKS)
+  console.log(AUDIO)
 
   return (
     <main>
       <h2>Bücher</h2>
-      <Table data={BOOKS} />
+      <Table books={BOOKS} />
       <h2>Audio-Books</h2>
-      <Table data={AUDIO} />
+      <Table audio={AUDIO} />
     </main>
   );
 }

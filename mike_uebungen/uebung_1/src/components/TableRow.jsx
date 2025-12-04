@@ -1,17 +1,29 @@
 import React from 'react';
 
-function TableRow(props) {
-  console.log();
+function TableRow({ Autor, Titel, Jahr, Seiten, Länge, Verlag }) {
+  /*  
+  * - titel: string
+  * - jahr: number
+  * - seiten: number
+  * - verlag: string
+  */
+  /* props = Audio-Objekt
+   * props.autor:
+   * - autor: string 
+   * - titel: string
+   * - länge: number
+   * - verlag: string
+   */
   return (
     <tr>
-      <td>{props.Autor}</td>
-      <td>{props.Titel}</td>
-      <td>{props.Jahr}</td>
-      <td>{props.Seiten ? props.Seiten : ''}</td>
-      <td>{props.Laenge ? props.Laenge : ''}</td>
-      <td>{props.Verlag}</td>
+      <td>{Autor}</td>
+      <td>{Titel}</td>
+      <td>{Jahr}</td>
+      <td>{Seiten || ''}</td>
+      <td>{Länge || ''}</td>
+      <td>{Verlag}</td>
     </tr>
   );
 }
 
-export default TableRow;
+export default TableRow; 
