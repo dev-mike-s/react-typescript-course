@@ -23,7 +23,9 @@
     "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.9.6"
+    "react-router": "^7.9.6",
+    "redux-thunk": "^3.1.0",
+    "redux-toolkit": "^1.1.2"
   },
   "scripts": {
     "uebung1": "cross-env VITE_APP_ROOT=mike_uebungen/uebung_1 npx vite --config vite.shared.js",
